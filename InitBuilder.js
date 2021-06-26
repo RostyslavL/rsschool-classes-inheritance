@@ -14,11 +14,17 @@ class  baseBilder{  //
     constructor(value){
         this.value = value 
     }
-    plus(...n) {
-        this.value =  this.value  + n.reduce((sum, value) => sum + value) // this
-        return this
+    get storedValue() { 
+        return this.value
     }
+}
 
+
+class IntBuilder extends baseBilder{
+    constructor(value){
+        value = typeof value === 'number' ? value : 0
+        super(value)
+    }
     multiply(n){
         this.value = this.value * n
         return this // this
@@ -30,17 +36,6 @@ class  baseBilder{  //
     mod(n){
         this.value = this.value % n
         return this // this
-    }
-    get storedValue() { 
-        return this.value
-    }
-}
-
-
-class IntBuilder extends baseBilder{
-    constructor(value){
-        value = typeof value === 'number' ? value : 0
-        super(value)
     }
     minus(...n){
         this.value = this.value - n.reduce((dif, value) => dif + value)

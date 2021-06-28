@@ -14,11 +14,19 @@ class  baseBilder{  //
     constructor(value){
         this.value = value 
     }
+    plus(...n) {
+        this.value =  this.value  + n.reduce((sum, value) => sum + value) // this
+        return this
+    }
+    divide(n){
+        this.value = this.value / n
+        return this // this
+    }
+
     get storedValue() { 
         return this.value
     }
 }
-
 
 class IntBuilder extends baseBilder{
     constructor(value){

@@ -82,7 +82,7 @@ let strBuilder = new StringBuilder('Test');
 
 console.log(strBuilder.plus('adasa', '!5678'));
 console.log(strBuilder.minus(3));
-// console.log(StringBuilder.multiply(3));
+console.log(StringBuilder.multiply(3));
 console.log(strBuilder.divide(4));
 console.log(strBuilder.remove('s'));
 console.log(strBuilder.sub(3, 1));

@@ -59,7 +59,7 @@ function StringBuilder(value){
 StringBuilder.prototype = Object.create(BaseBuilder.prototype);
 
 StringBuilder.prototype.multiply = function(n){
-    this.value.repeat(n);
+    this.value = this.value.repeat(n);
     return this;
   }
   StringBuilder.prototype.minus = function(n){
@@ -71,7 +71,7 @@ StringBuilder.prototype.multiply = function(n){
     return this;
   }
   StringBuilder.prototype.remove = function(string){
-    this.value.split(string).join('');
+    this.value = this.value.split(string).join('');
     return this;
   }
   StringBuilder.prototype.sub = function (start, length){ 
@@ -82,7 +82,7 @@ let strBuilder = new StringBuilder('Test');
 
 console.log(strBuilder.plus('adasa', '!5678'));
 console.log(strBuilder.minus(3));
-console.log(StringBuilder.multiply(3));
+// console.log(StringBuilder.multiply(3));
 console.log(strBuilder.divide(4));
 console.log(strBuilder.remove('s'));
 console.log(strBuilder.sub(3, 1));
